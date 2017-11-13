@@ -1,0 +1,8 @@
+/* Applies to all elements */
+* {
+ font-size: 100%;
+ font-family: font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h1 {color: blue;
+	text-align: center;}
