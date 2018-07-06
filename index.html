@@ -1,136 +1,143 @@
-<!DOCTYPE HTML>
-<!--
-	Urban by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+<!DOCTYPE html>
+<meta charset="utf-8">
 <html>
-	<head>
-		<title>Rhydian Windsor - Machine Learning, AI, Physics and More... </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="images/favicon.ico">
-	</head>
-	<body>
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">Urban <span>by TEMPLATED</span></a></div>
-				<a href="#menu">Menu</a>
-			</header>
+<head>
+	<title>rhydian windsor - machine learning, a.i. & cancer researcher.</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
 
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="#about-me">About Me</a></li>
-					<li><a href="#projects">Selected Projects</a></li>
-					<li><a href="#contact-info">Contact Information</a></li>
-					<li><a href="./assets/pdfs/CV.pdf">My CV</a></li>
-					<li><a href="./blog_index.html"> Blog </a></li>
-					<li><a href="./lab-report-page.html"> Project Reports </a></li>
-				</ul>
-			</nav>
+<body>
+	<div class="name"><h1 ><div style="float: left;width=49%"> rhydian windsor. <br> <span class="subtitle">machine learning, a.i. and cancer researcher. </span> </div><div class="clock" style="float:right,width:49%"> time </div>	</h1>
+	<br>
+		<div><h1 class="subtitle"> </h1></div>
+	</div>
 
-		<!-- Banner -->
-			<section id="banner">
-				<div class="inner">
-					<header>
-						<h1>Hello there!	</h1>
-						<p>Hi, my name's Rhydian. Welcome to my personal site! Make yourself at home.</p>
-					</header>
-					<a href="#projects" class="button big scrolly">Some things I've been upto</a>
-				</div>
-			</section>
+	<div class= "main_page" id="main-panel">	
+		<div class="category" id="about" ><h2 onclick="fade_menu()"> about. </h2> </div>
+		<div class="category"><h2 id="projects"> projects.  </h2> </div>
+		<div class="category"><a id="CVbanner" href="assets/CV.pdf" target="_blank" title="opens in new tab"><h2> curriculum vitae.  </h2> </a></div>
+		<div class="category">
+			<h2 id="contact-me"> contact me. 
+				<a class="social-network-link" target="_blank" href="https://twitter.com/rhydianwindsor">twitter</a>
+				<a class="social-network-link" target="_blank" href="https://uk.linkedin.com/in/rhydian-windsor-97a656bb">linked in</a>
+				<a class="social-network-link" href="mailto:rhydianwindsor@gmail.com" title="mail to rhydianwindsor@gmail.com">email</a>
+				<a class="social-network-link" target="_blank" href="https://github.com/rwindsor1" href="">github</a>
+			</h2> </div>
+		<div class="category"><h2 id="blog"> blog. <span id="coming-soon">coming soon</span></h2> </div>
 
-		<!-- Main -->
-			<div id="main">
+	<div class="general-information-paragraph" id="about-me">
+		<img class="profile-pic" src="assets/rhydian.jpg" alt="a picture of me!">
+		<p>That's me in the middle. I hail from a medium sized town in the West Midlands called Shrewsbury but nowadays I live in Manchester, where I studied a Master's in Physics. Next year (graduation permitting!) I'll be starting as a postgraduate DPhil student at the University of Oxford researching the use of artifical intelligence in the treatment of cancer, funded by <a href="https://www.cancerresearchuk.org/">Cancer Research UK</a>.</p>
+		<p>Over the course of my degree, I have developed an interest in machine learning and artificial intelligence in particular as a means of making intelligent systems (robots, expert systems and all that other cool stuff). I set up this website as a place to put stuff I've been working on. When I've got a little more time I'm hoping to set up a blog too. If you want to contact me you can email me at <a>windsorrhydian@gmail.com</a>, or <a href= "https://twitter.com/rhydianwindsor">twitter me</a>. Or you could have a look at my CV if you're so inclined.	</p>
+		<img class= "back-button" src="assets/back-button.png" alt="go back" title="go back to menu"></div>
+	</div>
 
-				<!-- Section -->
-					<section class="wrapper style1">
-						<div class="inner" id="about-me">
-							<!-- 2 Columns -->
-								<div class="flex flex-2">
-									<div class="col col1">
-										<div class="image round fit">
-											<img src="images/profile2.jpg" alt="" />
-										</div>
-									</div>
-									<div class="col col2">
-										<h3>A short bio</h3>
-										<p>	</p>
-										<p>That's me in the middle. I hail from a medium sized town in the West Midlands called Shrewsbury but nowadays I live in Manchester, where I studied a Master's in Physics. Next year (graduation permitting!) I'll be starting as a
-										postgraduate DPhil student at the University of Oxford researching the use of artifical intelligence in the treatment of cancer, funded by <a href="https://www.cancerresearchuk.org/"> Cancer Research UK </a>.</p>
-										<p>Over the course of my degree, I have developed an interest in machine learning and artificial intelligence in particular as a means of making intelligent systems (robots, expert systems and all that other cool stuff). I set up this website as a place to put stuff I've been working on. When I've got a little more time I'm hoping to set up a blog too. If you want to contact me you can email me at <a>windsorrhydian@gmail.com</a>, or <a href= "https://twitter.com/rhydianwindsor">twitter me </a>. Or you could have a look at my CV if you're so inclined:	</p>
-										<a href="./assets/pdfs/CV.pdf" class="button">My CV</a>
-									</div>
-								</div>
-						</div>
-					</section>
+	<div class="general-information-paragraph" id="selected-projects">
+		<div class="row" id="project-table">
+  <div class="col-sm-4" style="border-right:solid 1px gray;"><h2>Predicting Hurricanes Using Deep Learning</h2></div>
+  <div class="col-sm-4" ><h2>Lung Cancer Shrinkage</h2></div>
+  <div class="col-sm-4" style="border-left:solid 1px gray;"><h2>Automated Footfall Mapping</h2></div>
+</div>
+<div class="row">
+  <div class="col-sm-4" style="border-right:solid 1px gray" id="project1">
+  	<img class="project-displaypic" src="assets/hurricane.png" id="project1pic">
+  	<div class= "project-description" id="project1description">
+	  	<p>A keras tutorial for complete beginners, written for a JBCA Hacknight. Also includes an introduction to the python library basemap and a pretty cool historical dataset of hurricanes and weather conditions around Florida. </p>
+		<a href="https://github.com/JBCA-MachineLearning/Typhoons-and-Hurricanes-Hacknight" class="button">Project GitHub</a>
+	</div>
+  </div>
+  <div class="col-sm-4" id="project2">
+  	<img class="project-displaypic" src="assets/lungcancer.jpg" id="project2pic">
+  	<div class= "project-description" id="project2description">
+	  	<p>My MPhys project performed in collaboration with <a href="https://www.linkedin.com/in/george-needham-69049b12b/"> George Needham </a> , we are working at the Christie Cancer Research centre in Manchester, exploring the link between lung cancer tissue density during radiotherapy and the likelihood of relapse.</p>
+		<a href="./assets/pdfs/mphys-project-report.pdf" class="button"> Mid-project report</a><br /><br />
+		<a href="./assets/pdfs/mphys-project-report-final.pdf" class="button"> Final report (Read this)</a>
+								
+	</div>
+  </div>
+  <div class="col-sm-4" style="border-left:solid 1px gray" id="project3">
+  	<img class="project-displaypic" src="assets/footfallmapping.png" id="project3pic">
+  	<div class= "project-description" id="project3description">
+  	<p>My summer research internship, performed for the Victoria and Albert Waterfront in Cape Town, South Africa. I used computer vision techniques on security camera footage from the Waterfront to create a system to count the number of pedestrians passing through the area. This project was my first real experience of applying machine learning to a real-world problem. </p>
+	<a href="./assets/pdfs/waterfront-report.pdf" class="button">Read my paper on the project</a>
+</div>
+</div>								
+</div>
+		<img class= "back-button" src="assets/back-button.png" alt="go back" title="go back to menu" style="align-items:center"></div>
+	</div>
+	
+	</div>
+	</div>
 
-				<!-- Section -->
-					
+	
 
-				<!-- Section -->
-					<section class="wrapper style2">
-						<div class="inner" id="projects">
-							<header class="align-center">
-								<h2>Some Projects</h2>
-								<p>Here's a few things I've been working on. A more comprehensive list of reports on projects I've done is available <a style="color:white" href="./lab-report-page.html">here</a>.</p>
-							</header>
-							<div class="flex flex-3">
-								<div class="col align-center">
-									<div class="image round fit">
-										<img src="images/hurricane.png" alt="" />
-									</div>
-									<h3>Predicting Hurricanes Using Deep Learning</h3>
-									<p>A keras tutorial for complete beginners, written for a JBCA Hacknight. Also includes an introduction to the python library basemap and a pretty cool historical dataset of hurricanes and weather conditions around Florida. </p>
-									<a href="https://github.com/JBCA-MachineLearning/Typhoons-and-Hurricanes-Hacknight" class="button">Project GitHub</a>
-								</div>
-								<div class="col align-center">
-									<div class="image round fit">
-										<img src="images/lungcancer.jpg" alt="" />
-									</div>
-									<h3>Lung Cancer Shrinkage</h3>
-									<p>My MPhys project performed in collaboration with <a style="color:white" href="https://www.linkedin.com/in/george-needham-69049b12b/"> George Needham </a> , we are working at the Christie Cancer Research centre in Manchester, exploring the link between lung cancer tissue density during radiotherapy and the likelihood of relapse.</p>
-									<a href="./assets/pdfs/mphys-project-report.pdf" class="button"> Mid-project report</a><br /><br />
-									<a href="./assets/pdfs/mphys-project-report-final.pdf" class="button"> Final report (Read this)</a>
-								</div>
-								<div class="col align-center">
-									<div class="image round fit">
-										<img src="images/footfallmapping.png" alt="" />
-									</div>
-									<h3>Automated Footfall Mapping</h3>
+</body>
+<script src="scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	function toggleNavBar(){
+		$(".category").toggle(1000);
+	};
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".general-information-paragraph").hide();
+		$("#back-pane").hide();
+		$(".social-network-link").hide();
+		$("#coming-soon").hide();
+		setInterval(function(){
+			$(".clock").html(new Date());
+		}
+			,1000);
+		$("#project-banner").hide()
+		$("#about").on('click',function(){
+			toggleNavBar()
+			$("document").delay(1000);
+			$("#about-me").toggle(1000);
+		})
 
-									<p>My summer research internship, performed for the Victoria and Albert Waterfront in Cape Town, South Africa. I used computer vision techniques on security camera footage from the Waterfront to create a system to count the number of pedestrians passing through the area. This project was my first real experience of applying machine learning to a real-world problem. </p>
-									<a href="./assets/pdfs/waterfront-report.pdf" class="button">Read my paper on the project</a>
-								</div>
-							</div>
-						</div>
-					</section>
+		$("#projects").on('click',function(){
+			toggleNavBar()
+			$("document").delay(1000);
+			$("#selected-projects").toggle(1000);
+		})
 
-			</div>
+		$("#projects").hover(function(){$("#project-banner").show(500);},function(){$("#project-banner").hide(500);});
+		$("#CVdownloader").click(function(){
+			window.location.assign = "assets/CV.pdf";
+		})
+		$(".back-button").on('click',function(){
+			$(".general-information-paragraph").hide(1000);
+			toggleNavBar();
+		})
+		$("#blog").hover(function(){$("#coming-soon").show(500);},function(){$("#coming-soon").fadeOut(500);})
+		$("#contact-me").hover(function(){$(".social-network-link").show(500);},function(){$(".social-network-link").fadeOut(500);})
+		$(".project-description").hide();
+		$("#project1").hover(function(){
+			$("#project1pic").fadeToggle(500);
+			$("#project1description").delay(500).fadeToggle(500);},function(){
+			$("#project1description").fadeToggle(500)
+			$("#project1pic").delay(1000).fadeToggle(500);
+			})
+		$("#project2").hover(function(){
+			$("#project2pic").fadeToggle(500);
+			$("#project2description").delay(500).fadeToggle(500);},function(){
+			$("#project2description").fadeToggle(500)
+			$("#project2pic").delay(500).fadeToggle(500);
+			})
+		$("#project3").hover(function(){
+			$("#project3pic").fadeToggle(500);
+			$("#project3description").delay(500).fadeToggle(500);},function(){
+			$("#project3description").fadeToggle(500)
+			$("#project3pic").delay(500).fadeToggle(500);
+			})
+	});
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="copyright">
-					<ul class="icons">
-						<li><a href="https://twitter.com/rhydianwindsor" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://github.com/rwindsor1" class="icon fa-github"><span class="label">Facebook</span></a></li>
-						<li><a href="https://www.instagram.com/rhydianwindsor/?hl=en" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-					<p>&copy; Rhydian Windsor. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
-				</div>
-			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	
 
-	</body>
+</script>
 </html>
