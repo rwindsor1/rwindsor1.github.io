@@ -13,11 +13,10 @@
 <body>
 	<div class="name"><h1 ><div style="float: left;width=49%"> rhydian windsor. <br> <span class="subtitle"> (soon-to-be) machine learning, a.i. and cancer researcher. </span> </div><div class="clock" style="float:right,width:49%"> time </div>	</h1>
 	<br>
-		<div><h1 class="subtitle"> </h1></div>
 	</div>
 
 	<div class= "main_page" id="main-panel">	
-		<div class="category" id="about" ><h2 onclick="fade_menu()"> about. </h2> </div>
+		<div class="category" id="about" ><h2> about. </h2> </div>
 		<div class="category"><h2 id="projects"> projects.  </h2> </div>
 		<div class="category"><a id="CVbanner" href="assets/CV.pdf" target="_blank" title="opens in new tab"><h2> curriculum vitae.  </h2> </a></div>
 		<div class="category">
@@ -29,50 +28,95 @@
 			</h2> </div>
 		<div class="category"><h2 id="blog"> blog. <span id="coming-soon">coming soon</span></h2> </div>
 
+	<!-- ABOUT ME LAYOUT -->
 	<div class="general-information-paragraph" id="about-me">
 		<img class="profile-pic" src="assets/rhydian.jpg" alt="a picture of me!">
 		<p>That's me in the middle. I hail from a medium sized town in the West Midlands called Shrewsbury but nowadays I live in Manchester, where I studied a Master's in Physics. Next year (graduation permitting!) I'll be starting as a postgraduate DPhil student at the University of Oxford researching the use of artifical intelligence in the treatment of cancer, funded by <a href="https://www.cancerresearchuk.org/">Cancer Research UK</a>.</p>
 		<p>Over the course of my degree, I have developed an interest in machine learning and artificial intelligence in particular as a means of making intelligent systems (robots, expert systems and all that other cool stuff). I set up this website as a place to put stuff I've been working on. When I've got a little more time I'm hoping to set up a blog too. If you want to contact me you can email me at <a>windsorrhydian@gmail.com</a>, or <a href= "https://twitter.com/rhydianwindsor">twitter me</a>. Or you could have a look at my CV if you're so inclined.	</p>
-		<img class= "back-button" src="assets/back-button.png" alt="go back" title="go back to menu"></div>
+		<img class= "back-button" src="assets/back-button.png" alt="go back" title="go back to menu">
 	</div>
+	<!-- PROJECTS PARAGRAPH -->
 
-	<div class="general-information-paragraph" id="selected-projects">
-		<div class="row" id="project-table">
-  <div class="col-sm-4" style="border-right:solid 1px gray;"><h2>Predicting Hurricanes Using Deep Learning</h2></div>
-  <div class="col-sm-4" ><h2>Lung Cancer Shrinkage</h2></div>
-  <div class="col-sm-4" style="border-left:solid 1px gray;"><h2>Automated Footfall Mapping</h2></div>
-</div>
-<div class="row">
-  <div class="col-sm-4" style="border-right:solid 1px gray" id="project1">
-  	<img class="project-displaypic" src="assets/hurricane.png" id="project1pic">
-  	<div class= "project-description" id="project1description">
+
+	<div class="container" id="selected-projects">
+	<div class="row">
+  	<div class="col-md-4" style="border-right:solid 1px gray;" id ="project1"> 
+  		<div id="project-table"> <h4>Predicting Hurricanes Using Deep Learning</h4></div>
+  		<div id="project-table"> <img class="project-displaypic" src="assets/hurricane.png" id="project1pic">
+  		<div class= "project-description" id="project1description">
 	  	<p>A keras tutorial for complete beginners, written for a JBCA Hacknight. Also includes an introduction to the python library basemap and a pretty cool historical dataset of hurricanes and weather conditions around Florida. </p>
 		<a href="https://github.com/JBCA-MachineLearning/Typhoons-and-Hurricanes-Hacknight" class="button">Project GitHub</a>
-	</div>
-  </div>
-  <div class="col-sm-4" id="project2">
-  	<img class="project-displaypic" src="assets/lungcancer.jpg" id="project2pic">
-  	<div class= "project-description" id="project2description">
-	  	<p>My MPhys project performed in collaboration with <a href="https://www.linkedin.com/in/george-needham-69049b12b/"> George Needham </a> , we are working at the Christie Cancer Research centre in Manchester, exploring the link between lung cancer tissue density during radiotherapy and the likelihood of relapse.</p>
-		<a href="./assets/pdfs/mphys-project-report.pdf" class="button"> Mid-project report</a><br /><br />
-		<a href="./assets/pdfs/mphys-project-report-final.pdf" class="button"> Final report (Read this)</a>
-								
-	</div>
-  </div>
-  <div class="col-sm-4" style="border-left:solid 1px gray" id="project3">
-  	<img class="project-displaypic" src="assets/footfallmapping.png" id="project3pic">
-  	<div class= "project-description" id="project3description">
-  	<p>My summer research internship, performed for the Victoria and Albert Waterfront in Cape Town, South Africa. I used computer vision techniques on security camera footage from the Waterfront to create a system to count the number of pedestrians passing through the area. This project was my first real experience of applying machine learning to a real-world problem. </p>
-	<a href="./assets/pdfs/waterfront-report.pdf" class="button">Read my paper on the project</a>
-</div>
-</div>								
-</div>
-		<img class= "back-button" src="assets/back-button.png" alt="go back" title="go back to menu" style="align-items:center"></div>
+		</div>
+		</div>
 	</div>
 	
-	</div>
-	</div>
 
+  	<div class="col-md-4" id="project2" >
+  		<div id="project-table"> <h4>Lung Cancer Shrinkage</h4> </div>
+  		<div id="project-table">
+  		<img class="project-displaypic" src="assets/lungcancer.jpg" id="project2pic">
+  		<div class= "project-description" id="project2description">
+	  	<p>My MPhys project performed in collaboration with <a href="https://www.linkedin.com/in/george-needham-69049b12b/"> George Needham </a> , we are working at the Christie Cancer Research centre in Manchester, exploring the link between lung cancer tissue density during radiotherapy and the likelihood of relapse.</p>
+		<a href="./assets/pdfs/mphys-project-report.pdf" class="button"> Mid-project report</a><br /><br />
+		<a href="./assets/pdfs/mphys-project-report-final.pdf" class="button"> Final report (Read this)</a>							
+		</div> 
+	</div> 
+  	</div>
+
+    <div class="col-md-4" style="border-left:solid 1px gray;" id="project3">
+  	<div><h4>Automated Footfall Mapping</h4></div>
+  	<div>
+  		<img class="project-displaypic" src="assets/footfallmapping.png" id="project3pic">
+	  	<div class= "project-description" id="project3description">
+	  	<p>My summer research internship, performed for the Victoria and Albert Waterfront in Cape Town, South Africa. I used computer vision techniques on security camera footage from the Waterfront to create a system to count the number of pedestrians passing through the area. This project was my first real experience of applying machine learning to a real-world problem. </p>
+		<a href="./assets/pdfs/waterfront-report.pdf" class="button">Read my paper on the project</a></div>
+	</div>
+</div>
+
+		
+	</div>
+	<div>
+		<div style="float:left">
+	<img class= "back-button" src="assets/back-button.png" alt="go back" title="go back to menu" style="align-items:left"> </div> <div style="float:right;padding:2%"> <a id="more-reports" style="float-right">more project reports.</a> </div>
+	</div>
+	</div>
+	
+	<div id="more-reports-page">
+		<div class="container" id="more-reports-container">
+			<div class="row">
+				<div class="col-md-4">
+					<h3>Electronics Implementation and Design</h3>
+					<p>As one of our third year lab projects, George and I designed and build an electronic amplifier for a mobile phone audio signal. This is a short conference-style report I wrote on it. </p>
+					<a href="./assets/pdfs/amplifier-report.pdf" class="button">Project Report</a>
+				</div>
+				<div class="col-md-4">
+					<h3>Electrical Properties of Graphene</h3>
+					<p>Another third year laboratory project. Here we explore the electrical properties of graphene using the method Andre Geim and Konstantin Novoselov used in their Nobel Prize winning paper  <a href="http://science.sciencemag.org/content/306/5696/666"><b>"Electric Field Effect in Atomically Thin Carbon Films"</b></a></p>
+					<a href="./assets/pdfs/graphene-report.pdf" class="button">Project Report</a>
+				</div>
+				<div class="col-md-4">
+					<h3>Inflation and the Second Law of Thermodynamics</h3> 	
+					<p>An essay I wrote for a final year physics and philosophy course concerning the apparent contradiction between inflation's 'generic' conditions and the second law of thermodynamics pointing to highly specialised initial conditions.</p>
+					<a href="./assets/pdfs/second-law-thermodynamics.pdf" class="button">Essay</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<h3>Chess Board</h3>
+					<p>A command-line based chess board written in C++. The board allows two people to play each other and records the game as a .PGN file. I'm hoping to build an artificial intelligence for this one day. The project GitHub can be accessed <a href="https://github.com/rwindsor1/Console-Based-Chess-Board"><b>here</b></a></p>
+					<a href="./assets/pdfs/chess-report.pdf" class="button">Project Report</a>
+				</div>
+				<div class="col-md-4">
+
+				</div>
+				<div class="col-md-4">
+						
+				</div>
+			</div>
+		</div>
+		<img class= "back-button" src="assets/back-button.png" alt="go back" title="go back to menu">
+	</div>
+	</div>
 	
 
 </body>
@@ -85,7 +129,9 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(".general-information-paragraph").hide();
+		$("#selected-projects").hide();
 		$("#back-pane").hide();
+		$("#more-reports-page").hide();
 		$(".social-network-link").hide();
 		$("#coming-soon").hide();
 		setInterval(function(){
@@ -111,29 +157,36 @@
 		})
 		$(".back-button").on('click',function(){
 			$(".general-information-paragraph").hide(1000);
+			$("#selected-projects").hide(1000);
+			$("#more-reports-page").hide(1000);
 			toggleNavBar();
 		})
 		$("#blog").hover(function(){$("#coming-soon").show(500);},function(){$("#coming-soon").fadeOut(500);})
 		$("#contact-me").hover(function(){$(".social-network-link").show(500);},function(){$(".social-network-link").fadeOut(500);})
 		$(".project-description").hide();
 		$("#project1").hover(function(){
-			$("#project1pic").fadeToggle(500);
-			$("#project1description").delay(500).fadeToggle(500);},function(){
-			$("#project1description").fadeToggle(500)
-			$("#project1pic").delay(1000).fadeToggle(500);
+			$("#project1pic").fadeOut(500,function(){$("#project1description").fadeIn(500);});},
+			function(){
+			$("#project1description").fadeOut(500,function(){$("#project1pic").delay(1000).fadeIn(500);})
+			
 			})
 		$("#project2").hover(function(){
-			$("#project2pic").fadeToggle(500);
-			$("#project2description").delay(500).fadeToggle(500);},function(){
-			$("#project2description").fadeToggle(500)
-			$("#project2pic").delay(500).fadeToggle(500);
+			$("#project2pic").fadeOut(500,function(){$("#project2description").fadeIn(500);});
+			},function(){
+			$("#project2description").fadeOut(500,function(){$("#project2pic").fadeIn(500);})
 			})
 		$("#project3").hover(function(){
-			$("#project3pic").fadeToggle(500);
-			$("#project3description").delay(500).fadeToggle(500);},function(){
-			$("#project3description").fadeToggle(500)
-			$("#project3pic").delay(500).fadeToggle(500);
+			$("#project3pic").fadeOut(500,function(){$("#project3description").delay(500).fadeIn(500);});
+			},function(){
+			$("#project3description").fadeOut(500,function(){$("#project3pic").delay(500).fadeIn(500);})
+			
 			})
+
+		$("#more-reports").click(function(){
+			$("#selected-projects").hide(1000);
+			$("#more-reports-page").show(1000);
+
+		})
 	});
 
 
