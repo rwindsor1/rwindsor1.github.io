@@ -119,3 +119,11 @@ a:hover{
 #more-reports-container{
 	overflow:hidden;
 }
+
+#more-reports{
+	color:orange;
+}
+
+#more-reports:hover{
+	color:yellow;
+}
