@@ -1,0 +1,22 @@
+body{
+	font-size: 20pt;
+	text-align: center;
+}
+
+#title{
+	font-size: 40pt;
+	padding: 3%;
+}
+
+#map_id{
+
+}
+
+#game_panel{
+	z-index=1
+	position: absolute;
+}
+
+button{
+	text-decoration: none;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- LEAFLET-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./leaflet/leaflet.css">
+	<link rel="stylesheet" href="./guesser-game-styles.css">
+	<script src="./leaflet/leaflet.js"></script> 
+	
+	 
+</head>
+<body>
+
+<h1 id="title"> City Guesser </h1>
+	<div id="game_panel">
+		<div id="cityinfo">City Name will appear here </div> 
+		<button id="button">Submit</button>
+		<div id="score_board"> score: 000</div>
+	</div>
+	<!-- <div class="col-sm" id="buttonHolder"></div> -->
+	<div id="mapid" style="height:500px"> </div>
+	</div>
+
+
+
+
+
+
+
+<script>
+	var mymap = L.map('mapid').setView([54.5393041,-7.4244191], 5);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.satellite',
+    accessToken: 'pk.eyJ1IjoicndpbmRyMSIsImEiOiJjampsY3FqZWoxZmxjM3BybHc0dTRndmh5In0.XbKjCG2BVYOXFJBk_NE-Jw'
+	}).addTo(mymap);
+	var mainMarker = new L.marker([54.5393041,-7.4244191],{});
+	var no_of_questions_asked = 5; //how many questions are asked
+	var city_numbers = 5;
+	var total_score = 0; // keeps track of total score of all guesses
+	var location_json;
+	var no_of_locations = 5;
+	var question_no = 1;
+	var CustomIcon = L.Icon.extend({
+    options: {
+        iconSize:     [40, 40],
+        shadowSize:   [50, 64],
+        iconAnchor:   [20, 37],
+        shadowAnchor: [4, 62],
+        popupAnchor:  [-3, -76]
+    }
+	});
+	var PlaceMarker =new CustomIcon({iconUrl: "leaflet/images/marker2.png"})
+	var trueMarker = new L.marker([54.5393041,-7.4244191],{icon: PlaceMarker})
+	var latclick = 54.5393041;
+	var longclick = -7.4244191;
+	mymap.on('click', function(e) {
+		latclick = e.latlng.lat;
+		longclick = e.latlng.lng;
+    	mainMarker.setLatLng([latclick,longclick]);
+    	mainMarker.addTo(mymap);
+	});
+	$("#button").click(function(){
+
+			if($("#button").text()== "Submit"){
+				var score = ((latitude-latclick)**2+(longitude-longclick)**2)*1000;
+				total_score = total_score + score;
+				update_score();
+				trueMarker.setLatLng([latitude,longitude]);
+				trueMarker.addTo(mymap);
+				$("#button").html("Next");
+				//trueMarker.setLatLng([latitude,longitude]);
+				//trueMarker._container.style.visibility = "visible";
+				return score
+			}
+			else if($("#button").text()== "Next"){
+				mainMarker.remove();
+				trueMarker.remove()	;
+				question_no++;
+				if(question_no > 5){
+					alert("Final Score: " + Math.floor(total_score) + ".\nPress okay to go again");
+					refresh_game();
+				}
+				else{
+					city_number = Math.floor(Math.random() * 65) + 1;
+					update_location();
+					$("#button").html("Submit");
+				}
+
+			}	
+
+		})
+	main_loop();
+
+
+	function update_score(){
+		$("#score_board").html("score: "+ Math.floor(total_score));
+	}
+
+	function refresh_game(){
+		question_no = 1;
+		total_score = 0;
+		update_score();
+		city_numbers = generate_random_numbers(no_of_locations);
+		update_location();
+		$("#button").html("Submit");
+	}
+
+
+	function main_loop(){
+		$.ajax({
+	    url: "uk-cities.json", // path to file
+	    dataType: 'json', // type of file (text, json, xml, etc)
+	    success: function(data) { // callback for successful completion
+	      no_of_locations = count_entries_in_dictionary(data);
+	      city_numbers = generate_random_numbers(no_of_locations);
+	      location_json = data;
+	      update_location();
+	    },
+	    error: function() { // callback if there's an error
+	      alert("Error: Couldn't Load City Datafile. Try Loading the page again");
+	    }
+	    
+	  	});
+		  	
+	}
+
+	function generate_random_numbers(how_many_numbers){
+		var arr = []
+		while(arr.length < how_many_numbers){
+		    var randomnumber = Math.floor(Math.random()*no_of_locations);
+		    if(arr.indexOf(randomnumber) > -1) continue;
+		    arr[arr.length] = randomnumber;
+		}
+		return arr;
+	}
+
+	function update_location(){
+		var random_number = city_numbers[question_no-1];
+		$("#cityinfo").html("(" + String(question_no) + "/" + String(no_of_questions_asked) +"). " + String(location_json[random_number].NAME));
+		latitude = location_json[random_number].LAT;
+		longitude = location_json[random_number].LONG;
+	}
+
+	function count_entries_in_dictionary(d){
+		c=0; for (i in d) ++c; return c
+	}
+
+</script>
+</body>
+</html>

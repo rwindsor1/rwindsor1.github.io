@@ -80,11 +80,11 @@ a:hover{
 	color:gray;
 }
 
-#CVbanner{
+.main-banner{
 	color: black;
 }
 
-#CVbanner:hover{
+.main-banner:hover{
 	color:gray;
 	text-decoration: none;
 }

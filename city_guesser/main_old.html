@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- LEAFLET-->
+	
+	<link rel="stylesheet" href="./leaflet/leaflet.css">
+	<script src="./leaflet/leaflet.js"></script> 
+	
+	 
+</head>
+<body>
+
+<h1 style="text-align: center"> City Guesser </h1>
+<div id="wrapper" style="float:none;">
+	<div id="cityinfo"> City Name will appear here</div>
+	<div id="buttonHolder"><button id="button">Submit</button></div>
+</div>
+
+<div id="mapid" style="height:500px;float: none"> </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<script>
+	var mymap = L.map('mapid').setView([54.5393041,-7.4244191], 5);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.satellite',
+    accessToken: 'pk.eyJ1IjoicndpbmRyMSIsImEiOiJjampsY3FqZWoxZmxjM3BybHc0dTRndmh5In0.XbKjCG2BVYOXFJBk_NE-Jw'
+	}).addTo(mymap);
+	var mainMarker = new L.marker([54.5393041,-7.4244191],{});
+	var nextCity = 0;
+	var CustomIcon = L.Icon.extend({
+    options: {
+        iconSize:     [40, 40],
+        shadowSize:   [50, 64],
+        iconAnchor:   [20, 37],
+        shadowAnchor: [4, 62],
+        popupAnchor:  [-3, -76]
+    }
+	});
+	var PlaceMarker =new CustomIcon({iconUrl: "leaflet/images/marker2.png"})
+	var trueMarker = new L.marker([54.5393041,-7.4244191],{icon: PlaceMarker})
+	var latclick = 54.5393041;
+	var longclick = -7.4244191;
+	mymap.on('click', function(e) {
+		latclick = e.latlng.lat;
+		longclick = e.latlng.lng;
+    	mainMarker.setLatLng([latclick,longclick]);
+    	mainMarker.addTo(mymap);
+	});
+	main_loop();
+	
+	function main_loop(){
+		var city_number = Math.floor(Math.random() * 65) + 1;
+		$.ajax({
+	    url: "uk-cities.json", // path to file
+	    dataType: 'json', // type of file (text, json, xml, etc)
+	    success: function(data) { // callback for successful completion
+	      $("#cityinfo").html(data[city_number].NAME);
+	      var cityNameLatLon = [data[city_number].NAME,data[city_number].LAT,data[city_number].LONG]
+	      their_score = request_guess(cityNameLatLon);
+	    },
+	    error: function() { // callback if there's an error
+	      alert("Error: Couldn't Load City Datafile. Try Loading the page again");
+	    }
+	    
+	  	});
+		  	
+	}
+
+	function request_guess(cityData){
+		var latitude = cityData[1];
+		var longitude = cityData[2];
+
+		// do stuff when map is clicked
+		$("#button").click(function(){
+
+			if($("#button").text()== "Submit"){
+				var score = ((latitude-latclick)**2+(longitude-longclick)**2)*1000;
+				alert(score);
+				trueMarker.setLatLng([latitude,longitude]);
+				trueMarker.addTo(mymap);
+				$("#button").html("Next");
+				//trueMarker.setLatLng([latitude,longitude]);
+				//trueMarker._container.style.visibility = "visible";
+				return score
+			}
+			else{
+				mainMarker.remove();
+				trueMarker.remove()	;
+				$("#button").html("Submit");
+			}	
+
+		})
+	}
+
+	function waitForClick(){
+
+	}
+
+</script>
+</body>
+</html>

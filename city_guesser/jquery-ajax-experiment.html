@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax Experiment</title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Ajax Experiment</h1>
+<div id="aplace"></div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $.ajax({
+    url: "city_data.csv", // path to file
+    dataType: 'text', // type of file (text, json, xml, etc)
+    success: function(data) { // callback for successful completion
+      alert("success!")
+      $("#aplace").html(data);
+    },
+    error: function() { // callback if there's an error
+      alert("error");
+    }
+  });     
+   
+});
+</script>
+</body>
+</html>
