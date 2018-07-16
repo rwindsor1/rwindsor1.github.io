@@ -3,7 +3,7 @@ body {
             padding: 0;
             margin: 0;
             font-family: 'Merienda', cursive;
-            font-size: 3vmax;
+            font-size: 2vmax;
 			text-align: center;
 
         }
@@ -36,8 +36,8 @@ html, body, #mapid {
 #game_panel{
 	z-index: 2;
 	position: absolute; 	
-	background:white;
-	width:30%;
+	background: white;
+	width: 30%;
 	top: 20%;
 	left: 1%;
 
