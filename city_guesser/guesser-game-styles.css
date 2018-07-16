@@ -2,21 +2,90 @@ body{
 	font-size: 20pt;
 	text-align: center;
 }
+body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Merienda', cursive;
+
+        }
+html, body, #mapid {
+	z-index:1;
+	position:relative;
+    height: 100%;
+    width: 100%;
+
+}
 
 #title{
 	font-size: 40pt;
-	padding: 3%;
+	left:10%;
 }
 
-#map_id{
-
+.float-box{
+	z-index: 2;
+	position: absolute; 	
+	background:white;
+	padding: 2%;
+	opacity: 0.5;
 }
+
+.float-box:hover{
+	opacity: 1;
+	border: solid;
+}
+
 
 #game_panel{
-	z-index=1
-	position: absolute;
+	z-index: 2;
+	position: absolute; 	
+	background:white;
+	width:30%;
+	top: 20%;
+	left: 1%;
+
 }
 
 button{
-	text-decoration: none;
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  font-size:1em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+button:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+#creator-info{
+	background:none;
+	color: grey;
+	border:none;
+	font-size:0.5em;
+	top:90%;
+	padding-left:0.5%;
 }
