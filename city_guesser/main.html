@@ -33,9 +33,17 @@
 		<hr>
 		<button id="go_again"> Go again</button>
 	</div>
+	<div class="float-box" id="game-chooser">
+		<div> Which game do you want to play? </div>
+		<div>
+			<button id="towns_button"> UK Towns </button>
+			<button id="cities_button"> UK Cities </button>
+		</div>
+	</div>
 	<!-- <div class="col-sm" id="buttonHolder"></div> -->
 	<div id="mapid"> </div>
-	</div>
+
+	
 
 	
 
@@ -80,7 +88,23 @@
     	mainMarker.addTo(mymap);
 	});
 
+
+
+	$("#game_panel").hide();
 	$("#summary_screen").hide();
+
+	$("#towns_button").click(
+		function(){
+			main_loop("uk-towns.json")
+	})
+
+	$("#cities_button").click(
+		function(){
+			main_loop("uk-cities.json")
+		})
+
+
+
 	$("#button").click(function(){
 
 			if($("#button").text()== "Submit"){
@@ -118,7 +142,6 @@
 		$("#game_panel").show();
 		refresh_game();
 	})
-	main_loop();
 
 
 	function update_score(){
@@ -135,9 +158,11 @@
 	}
 
 
-	function main_loop(){
+	function main_loop(filename){
+		$("#game-chooser").hide()
+		$("#game_panel").show()
 		$.ajax({
-	    url: "uk-cities.json", // path to file
+	    url: filename, // path to file
 	    dataType: 'json', // type of file (text, json, xml, etc)
 	    success: function(data) { // callback for successful completion
 	      no_of_locations = count_entries_in_dictionary(data);
