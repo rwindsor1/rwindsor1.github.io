@@ -85,3 +85,16 @@ button:hover:before,button:hover:after{
 	top:90%;
 	padding-left:0.5%;
 }
+
+#summary_screen{
+	background:white;
+	opacity: 1;
+	left:25%;
+	width:50%;
+	top:25%;
+	height: 50%;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 90px;   
+
+}

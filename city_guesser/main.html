@@ -28,9 +28,16 @@
 		designed by <a href="http://rhydianwindsor.com"> rhydian windsor </a>
 	</div>
 
+	<div class="float-box" id="summary_screen">
+		<div id ="final-score-box"> </div>
+		<hr>
+		<button id="go_again"> Go again</button>
+	</div>
 	<!-- <div class="col-sm" id="buttonHolder"></div> -->
 	<div id="mapid"> </div>
 	</div>
+
+	
 
 
 
@@ -72,6 +79,8 @@
     	mainMarker.setLatLng([latclick,longclick]);
     	mainMarker.addTo(mymap);
 	});
+
+	$("#summary_screen").hide();
 	$("#button").click(function(){
 
 			if($("#button").text()== "Submit"){
@@ -89,9 +98,10 @@
 				mainMarker.remove();
 				trueMarker.remove()	;
 				question_no++;
-				if(question_no > 5){
-					alert("Final Score: " + Math.floor(total_score) + ".\nPress okay to go again");
-					refresh_game();
+				if(question_no > no_of_questions_asked){
+					$("#game_panel").hide();
+					$("#summary_screen").show();
+					$("#final-score-box").html("Final Score: " + Math.floor(total_score) )
 				}
 				else{
 					city_number = Math.floor(Math.random() * 65) + 1;
@@ -102,6 +112,12 @@
 			}	
 
 		})
+
+	$("#go_again").click(function(){
+		$("#summary_screen").hide();
+		$("#game_panel").show();
+		refresh_game();
+	})
 	main_loop();
 
 
