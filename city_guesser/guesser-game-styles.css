@@ -1,11 +1,10 @@
-body{
-	font-size: 20pt;
-	text-align: center;
-}
+
 body {
             padding: 0;
             margin: 0;
             font-family: 'Merienda', cursive;
+            font-size: 3vmax;
+			text-align: center;
 
         }
 html, body, #mapid {
@@ -17,7 +16,6 @@ html, body, #mapid {
 }
 
 #title{
-	font-size: 40pt;
 	left:10%;
 }
 
@@ -50,7 +48,6 @@ button{
   color:#fff;
   border:none;
   position:relative;
-  font-size:1em;
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
