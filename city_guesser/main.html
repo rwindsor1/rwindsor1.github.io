@@ -107,19 +107,22 @@
 
 	var filenames = new Array();
 	$("#loading-div").hide();
-	$.get("./json_files", function(data) {
-    $("#loading-div").html(data);
-    getNames();
+	$.get("./json_files/index.csv", type="csv",function(data) {
+    getNames(data);
 	});
 
 
 	var games_list_string = new String();
-   	function getNames(){
-    var files = document.querySelectorAll("a.icon.file");
-		files.forEach(function(item){
-			filenames.push(item.textContent);
-	    })
-		var counter;
+   	function getNames(data){
+   		filenames=data.split(",")
+   		var counter;
+   		for(counter=0;counter < filenames.length;counter++){
+   			filenames[counter] = filenames[counter].slice(1,-1);
+   		}
+
+
+   		alert(filenames)
+
 		// generate html string for games_list_div
 		
 		for(counter= 0; counter < filenames.length; counter++){
