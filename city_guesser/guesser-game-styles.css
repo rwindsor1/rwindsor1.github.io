@@ -2,7 +2,7 @@
 body {
             padding: 0;
             margin: 0;
-            font-family: 'Merienda', cursive;
+            font-family: 'Raleway', cursive;
             font-size: 2vmax;
 			text-align: center;
 
@@ -24,7 +24,7 @@ html, body, #mapid {
 	position: absolute; 	
 	background:white;
 	padding: 2%;
-	opacity: 0.5;
+	opacity: 1;
 }
 
 .float-box:hover{
@@ -107,5 +107,33 @@ button:hover:before,button:hover:after{
 	height: 50%;
 	text-align: center;
 	vertical-align: middle;
-	line-height: 90px;   
+	/*line-height: 90px;  */
+}
+
+#games_list{
+	overflow-y:scroll;
+	padding:1%;
+	height:60%;
+	font-size: 0.8em
+}
+.game_button{
+	background:white;
+	color:	#8FBC8F;
+
+	margin:1%;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    color: green;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }

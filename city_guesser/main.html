@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="./leaflet/leaflet.css" type="text/css"/>
 	<link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet" type="text/css"/> 
+	<link href="https://fonts.googleapis.com/css?family=Knewave" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="./guesser-game-styles.css"/>
 	<script src="./leaflet/leaflet.js"></script> 
 
@@ -27,6 +29,9 @@
 	 
 </head>
 <body>
+	<div id="loading-div">
+		
+	</div>
 	<div class="float-box" id="game_panel">
 		<div id="cityinfo">City Name will appear here </div> 
 		<hr>
@@ -39,16 +44,18 @@
 	</div>
 
 	<div class="float-box" id="summary_screen">
-		<div id ="final-score-box"> </div>
+		<div id ="final-score-box" style="font-family: Knewave;"> </div>
 		<hr>
+		<div style="font-family: Raleway">
 		<button id="go_again"> Go again</button>
+	</div>
 	</div>
 
 	<div class="float-box" id="game_chooser">
-		<div> Which game do you want to play? </div>
-		<div>
-			<button id="towns_button"> UK Towns </button>
-			<button id="cities_button"> UK Cities </button>
+		<div style="font-family:Knewave; font-size: 2em"> CITY GUESSER </div>
+		<div style="font-size: 0.9em; color: gray"> Which category do you want to play? </div>
+		<div id="games_list">
+			Games List here
 		</div>
 	</div>
 	<!-- <div class="col-sm" id="buttonHolder"></div> -->
@@ -100,11 +107,41 @@
 	});
 
 
+	var filenames = new Array();
+	$("#loading-div").hide();
+	$.get("./json_files/", function(data) {
+    $("#loading-div").html(data);
+    getNames();
+	});
+	var games_list_string = new String();
+   function getNames(){
+    var files = document.querySelectorAll("a.icon.file");
+	files.forEach(function(item){
+		filenames.push(item.textContent);
+    })
+	var counter;
+	// generate html string for games_list_div
+	
+	for(counter= 0; counter < filenames.length; counter++){
+		games_list_string = games_list_string + "<div> <button class='game_button'>" + filenames[counter].replace(/\.[^/.]+$/,"") + " </button> </div>"
+	}
+	$("#games_list").html(games_list_string)
+	$(".game_button").click(function(){
+		var game_name = $(this).text().slice(0,-1)+".json";
+		main_loop(game_name);
+	});
+	}
+
+
+	
+
 
 	$("#game_panel").hide();
 	$("#summary_screen").hide();
 
-	$("#towns_button").click(
+	// code for game choosing screen
+	
+	/*$("#towns_button").click(
 		function(){
 			main_loop("uk-towns.json")
 	})
@@ -112,7 +149,7 @@
 	$("#cities_button").click(
 		function(){
 			main_loop("uk-cities.json")
-		})
+		})*/
 
 
 
@@ -173,7 +210,7 @@
 		$("#game_chooser").hide()
 		$("#game_panel").show()
 		$.ajax({
-	    url: filename, // path to file
+	    url: "json_files/" + filename, // path to file
 	    dataType: 'json', // type of file (text, json, xml, etc)
 	    success: function(data) { // callback for successful completion
 	      no_of_locations = count_entries_in_dictionary(data);
