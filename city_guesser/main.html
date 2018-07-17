@@ -44,11 +44,9 @@
 	</div>
 
 	<div class="float-box" id="summary_screen">
-		<div id ="final-score-box" style="font-family: Knewave;"> </div>
+		<div id ="final-score-box" style=""> </div>
 		<hr>
-		<div style="font-family: Raleway">
 		<button id="go_again"> Go again</button>
-	</div>
 	</div>
 
 	<div class="float-box" id="game_chooser">
@@ -109,27 +107,29 @@
 
 	var filenames = new Array();
 	$("#loading-div").hide();
-	$.get("./json_files/", function(data) {
+	$.get("./json_files", function(data) {
     $("#loading-div").html(data);
     getNames();
 	});
+
+
 	var games_list_string = new String();
-   function getNames(){
+   	function getNames(){
     var files = document.querySelectorAll("a.icon.file");
-	files.forEach(function(item){
-		filenames.push(item.textContent);
-    })
-	var counter;
-	// generate html string for games_list_div
-	
-	for(counter= 0; counter < filenames.length; counter++){
-		games_list_string = games_list_string + "<div> <button class='game_button'>" + filenames[counter].replace(/\.[^/.]+$/,"") + " </button> </div>"
-	}
-	$("#games_list").html(games_list_string)
-	$(".game_button").click(function(){
-		var game_name = $(this).text().slice(0,-1)+".json";
-		main_loop(game_name);
-	});
+		files.forEach(function(item){
+			filenames.push(item.textContent);
+	    })
+		var counter;
+		// generate html string for games_list_div
+		
+		for(counter= 0; counter < filenames.length; counter++){
+			games_list_string = games_list_string + "<div> <button class='game_button'>" + filenames[counter].replace(/\.[^/.]+$/,"") + " </button> </div>"
+		}
+		$("#games_list").html(games_list_string)
+		$(".game_button").click(function(){
+			var game_name = $(this).text().slice(0,-1)+".json";
+			main_loop(game_name);
+		});
 	}
 
 
