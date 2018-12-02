@@ -21,7 +21,7 @@
 </head>
 
 <body>
-	<div class="name"><h1 ><div style="float: left;width=49%"> rhydian windsor. <br> <span class="subtitle"> oxford dphil student studying a.i. in cancer research </span> </div><div class="clock" style="float:right,width:49%"> time </div>	</h1>
+	<div class="name"><h1 ><div style="float: left;width=49%"> rhydian windsor. <br> <span class="subtitle"> oxford dphil student studying a.i. in cancer research </span> </div>	</h1>
 
 	<br>
 	</div>
@@ -42,7 +42,7 @@
 		<div class="category"><h2><a class="main-banner" target="_blank" href="city_guesser/main.html">city guesser</a> </h2></div>
 
 	<!-- ABOUT ME LAYOUT -->
-	<div class="general-information-paragraph" id="about-me">
+	<div class="general-information-paragraph" style="display: none;" id="about-me">
 		<img class="profile-pic" src="assets/me.jpg" alt="a picture of me!">
 
 <p> I hail from a medium sized town in the West Midlands called Shrewsbury but nowadays I live in Oxford where I'm a postgraduate DPhil student researching the use of artifical intelligence in the treatment of cancer. I'm funded by <a href="https://www.cancerresearchuk.org/">Cancer Research UK</a>.</p>
@@ -176,7 +176,7 @@
 			toggleNavBar();
 		})
 		$("#blog").hover(function(){$("#coming-soon").show(500);})
-		$("#contact-me").hover(function(){$(".social-network-link").show(500);},function(){$(".social-network-link").fadeOut(500);})
+		$("#contact-me").stop().hover(function(){$(".social-network-link").show(500);},function(){$(".social-network-link").fadeOut(500);})
 		$(".project-description").hide();
 		$("#project1").hover(function(){
 			$("#project1pic").fadeOut(500,function(){$("#project1description").fadeIn(500);});},
