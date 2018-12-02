@@ -39,7 +39,7 @@
 			</h2> </div>
 	<!--<div class="category"><h2 id="blog"> blog. <span id="coming-soon">coming soon.</span></h2> </div>-->
 
-		<div class="category"><h2><a class="main-banner" target="_blank" href="city_guesser/main.html">city guesser</a> </h2></div>
+		<div class="category"><h2><a class="main-banner" target="_blank" href="city_guesser/main.html">city guesser game.</a> </h2></div>
 
 	<!-- ABOUT ME LAYOUT -->
 	<div class="general-information-paragraph" style="display: none;" id="about-me">
@@ -52,7 +52,7 @@
 	<!-- PROJECTS PARAGRAPH -->
 
 
-	<div class="container" id="selected-projects">
+	<div class="container" style = "display:none;" id="selected-projects">
 	<div class="row">
   	<div class="col-md-4" style="border-right:solid 1px gray;" id ="project1"> 
   		<div id="project-table"> <h4>Predicting Hurricanes Using Deep Learning</h4></div>
@@ -95,7 +95,7 @@
 	</div>
 	</div>
 	
-	<div id="more-reports-page">
+	<div id="more-reports-page" style="display: none;">
 		<div class="container" id="more-reports-container">
 			<div class="row">
 				<div class="col-md-4">
@@ -142,12 +142,7 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$(".general-information-paragraph").hide();
-		$("#selected-projects").hide();
-		$("#back-pane").hide();
-		$("#more-reports-page").hide();
-		$(".social-network-link").hide();
-		$("#coming-soon").hide();
+		$('.social-network-link').hide();
 		setInterval(function(){
 			$(".clock").html(new Date());
 		}
