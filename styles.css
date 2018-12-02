@@ -90,6 +90,7 @@ a:hover{
 }
 
 .social-network-link{
+	display:none;
 	color:orange;
 }
 
